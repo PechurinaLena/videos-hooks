@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoDetail = ({video}) => {
 
-    const videoSrc = `https://www.youtube.com/embed/${video?.id.videoId}`;
+    const videoSrc = `https://www.youtube.com/embed/${video && video.id.videoId}`;
 
     return (
         <div>
@@ -10,8 +10,8 @@ const VideoDetail = ({video}) => {
                 <iframe src={videoSrc} title='video player'/>
             </div>
             <div className="ui segment">
-                <h4 className="ui header">{video?.snippet.title}</h4>
-                <p>{video?.snippet.description}</p>
+                <h4 className="ui header">{video && video.snippet.title}</h4>
+                <p>{video && video.snippet.description}</p>
             </div>
         </div>
     );
